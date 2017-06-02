@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
@@ -26,6 +28,20 @@ class MainActivity : AppCompatActivity() {
         ButterKnife.bind(this@MainActivity)
 
         init()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_settings, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        if (item?.itemId == R.id.menu_action_settings) {
+            Navigator.startSettingsActivity(this@MainActivity)
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

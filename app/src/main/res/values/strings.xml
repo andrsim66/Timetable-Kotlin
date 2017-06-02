@@ -5,6 +5,7 @@
     <string name="data_loading_failed">Failed to load data</string>
 
     <string name="action_save">Save</string>
+    <string name="action_settings">Settings</string>
 
     <string name="lesson_title">Title</string>
     <string name="lesson_teacher">Teacher</string>

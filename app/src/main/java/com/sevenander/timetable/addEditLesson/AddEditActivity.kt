@@ -32,13 +32,13 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
     @BindView(R.id.tv_message) lateinit var tvMessage: TextView
     @BindView(R.id.pb_lesson) lateinit var pbLesson: ProgressBar
 
-    var timePicker: TimePickerDialog? = null
+    private var timePicker: TimePickerDialog? = null
 
-    var editMode: Boolean = false
-    var lessonId: Int = -1
-    var dayNumber: Int = -1
+    private var editMode: Boolean = false
+    private var lessonId: Int = -1
+    private var dayNumber: Int = -1
 
-    var presenter: AddEditPresenter? = null
+    private var presenter: AddEditPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

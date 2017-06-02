@@ -1,16 +1,16 @@
 package com.sevenander.timetable.previewLesson
 
-import com.sevenander.timetable.data.cache.LessonCache
-import com.sevenander.timetable.data.model.LessonEntity
 import com.sevenander.timetable.App
 import com.sevenander.timetable.R
+import com.sevenander.timetable.data.cache.LessonCache
+import com.sevenander.timetable.data.model.LessonEntity
 
 /**
  * Created by andrii on 6/2/17.
  */
-class PreviewPresenter(val view: PreviewView) {
+class PreviewPresenter(private val view: PreviewView) {
 
-    var cache = LessonCache(App.instance.getDatabase())
+    private var cache = LessonCache(App.instance.getDatabase())
 
     fun init(id: Int) {
         loadData(id)

@@ -28,5 +28,10 @@
         <activity
             android:name=".previewLesson.PreviewActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:screenOrientation="portrait" />
     </application>
+
 </manifest>

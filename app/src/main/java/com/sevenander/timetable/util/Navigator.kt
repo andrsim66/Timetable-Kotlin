@@ -1,10 +1,12 @@
 package com.sevenander.timetable.util
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.support.v4.app.Fragment
 import com.sevenander.timetable.addEditLesson.AddEditActivity
 import com.sevenander.timetable.previewLesson.PreviewActivity
+import com.sevenander.timetable.settings.SettingsActivity
 
 /**
  * Created by andrii on 6/1/17.
@@ -34,6 +36,10 @@ class Navigator {
             val intent = Intent(activity, PreviewActivity::class.java)
             intent.putExtra(Const.KEY_LESSON_ID, lessonId)
             activity.startActivityForResult(intent, Const.REQUEST_ADD_EDIT)
+        }
+
+        fun startSettingsActivity(context: Context) {
+            context.startActivity(Intent(context, SettingsActivity::class.java))
         }
     }
 }

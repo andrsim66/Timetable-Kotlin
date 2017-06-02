@@ -45,4 +45,5 @@ dependencies {
 
     compile "com.jakewharton:butterknife:$version_butterknife"
     kapt "com.jakewharton:butterknife-compiler:$version_butterknife"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

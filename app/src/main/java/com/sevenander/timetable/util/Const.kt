@@ -8,6 +8,9 @@ class Const private constructor() {
         val KEY_LESSON_ID = "lessonId"
         val KEY_LESSON_DAY = "lessonDay"
 
+        val KEY_PREFS = "timetablePrefs"
+        val KEY_PREFS_DAYS = "selectedDays"
+
         val REQUEST_ADD_EDIT = 1000
     }
 }
