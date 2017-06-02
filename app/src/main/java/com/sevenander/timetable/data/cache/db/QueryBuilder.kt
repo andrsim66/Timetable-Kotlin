@@ -32,9 +32,7 @@ class QueryBuilder {
                 " FROM " +
                 DbContract.LessonEntry.TABLE_NAME +
                 " WHERE " +
-                DbContract.LessonEntry.COLUMN_DAY +
-                " = " +
-                "'" + day.name + "'" +
+                DbContract.LessonEntry.COLUMN_DAY + " = '${day.name}'" +
                 " ORDER BY " +
                 DbContract.LessonEntry.COLUMN_START_TIME +
                 " ASC" +
@@ -46,9 +44,22 @@ class QueryBuilder {
                 " FROM " +
                 DbContract.LessonEntry.TABLE_NAME +
                 " WHERE " +
-                DbContract.LessonEntry.COLUMN_ID +
-                " = " +
-                "'" + id + "'" +
+                DbContract.LessonEntry.COLUMN_ID + " = '$id'" +
+                ";"
+    }
+
+    fun buildUpdateLessonQuery(lessonId: Int, name: String, teacher: String, day: String,
+                               start: String, end: String): String {
+        return "UPDATE " +
+                DbContract.LessonEntry.TABLE_NAME +
+                " SET " +
+                DbContract.LessonEntry.COLUMN_NAME + " = '$name'," +
+                DbContract.LessonEntry.COLUMN_TEACHER + " = '$teacher'," +
+                DbContract.LessonEntry.COLUMN_DAY + " = '$day'," +
+                DbContract.LessonEntry.COLUMN_START_TIME + " = '$start'," +
+                DbContract.LessonEntry.COLUMN_END_TIME + " = '$end'" +
+                " WHERE " +
+                DbContract.LessonEntry.COLUMN_ID + " = '$lessonId'" +
                 ";"
     }
 }

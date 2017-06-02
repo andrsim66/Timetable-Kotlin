@@ -5,8 +5,8 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.sevenander.kotlintest.data.cache.db.DbContract
 import com.sevenander.kotlintest.data.cache.db.DbSelector
-import com.sevenander.timetable.data.cache.db.QueryBuilder
 import com.sevenander.kotlintest.data.mapper.CursorMapper
+import com.sevenander.timetable.data.cache.db.QueryBuilder
 import com.sevenander.timetable.data.mapper.ContentValuesMapper
 import com.sevenander.timetable.data.model.LessonDay
 import com.sevenander.timetable.data.model.LessonEntity
@@ -59,6 +59,10 @@ class LessonCache(private val database: SQLiteDatabase) {
         addEntity(DbContract.LessonEntry.TABLE_NAME, entity)
     }
 
+    fun updateLessonEntity(entity: LessonEntity) {
+        updateEntity(DbContract.LessonEntry.TABLE_NAME, entity)
+    }
+
     private fun addEntity(tableName: String, entity: LessonEntity) {
         database.beginTransaction()
         try {
@@ -67,6 +71,13 @@ class LessonCache(private val database: SQLiteDatabase) {
         } finally {
             database.endTransaction()
         }
+    }
+
+    private fun updateEntity(tableName: String, entity: LessonEntity) {
+        val contentValues = fillContent(entity)
+
+        database.update(tableName, contentValues,
+                DbContract.LessonEntry.COLUMN_ID + " = '${entity.id}'", null)
     }
 
     private fun insert(tableName: String, entity: LessonEntity) {

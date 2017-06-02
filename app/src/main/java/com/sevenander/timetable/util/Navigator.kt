@@ -10,8 +10,17 @@ import com.sevenander.timetable.previewLesson.PreviewActivity
  */
 class Navigator {
     companion object {
-        fun startAddActivity(activity: Activity) {
-            activity.startActivity(Intent(activity, AddEditActivity::class.java))
+
+        fun startAddActivity(activity: Activity, dayNumber: Int) {
+            val intent = Intent(activity, AddEditActivity::class.java)
+            intent.putExtra(Const.KEY_LESSON_DAY, dayNumber)
+            activity.startActivity(intent)
+        }
+
+        fun startEditActivity(activity: Activity, lessonId: Int) {
+            val intent = Intent(activity, AddEditActivity::class.java)
+            intent.putExtra(Const.KEY_LESSON_ID, lessonId)
+            activity.startActivity(intent)
         }
 
         fun startPreviewActivity(activity: Activity, lessonId: Int) {

@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/et_lesson_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/lesson_title"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/et_lesson_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/lesson_teacher"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_lesson_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/lesson_day"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_lesson_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/lesson_start"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_lesson_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/lesson_end"
+        android:maxLines="1" />
 
     <Button
         android:id="@+id/b_save"
@@ -15,4 +50,4 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_lesson_name"
         android:text="save" />
-</RelativeLayout>
+</LinearLayout>

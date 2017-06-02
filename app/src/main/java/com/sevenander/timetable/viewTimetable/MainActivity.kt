@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     @OnClick(R.id.fab_add)
     fun onAddClick() {
-        Navigator.startAddActivity(this@MainActivity)
+        Navigator.startAddActivity(this@MainActivity, vpTimetable.currentItem)
     }
 
     private fun init() {
