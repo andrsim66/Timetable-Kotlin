@@ -104,7 +104,7 @@ class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
 
     override fun onItemClick(lessonId: Int) {
 //        Navigator.startPreviewActivity(activity, lessonId)
-        Navigator.startEditActivity(activity, lessonId)
+        Navigator.startEditActivity(this@LessonListFragment, lessonId)
     }
 
     private fun init() {

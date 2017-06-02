@@ -5,7 +5,12 @@ import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.ProgressBar
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -17,11 +22,15 @@ import java.util.*
 
 class AddEditActivity : AppCompatActivity(), AddEditView {
 
+    @BindView(R.id.ll_lesson) lateinit var llLesson: LinearLayout
     @BindView(R.id.et_lesson_name) lateinit var etLessonName: EditText
     @BindView(R.id.et_lesson_teacher) lateinit var etLessonTeacher: EditText
     @BindView(R.id.tv_lesson_day) lateinit var tvLessonDay: TextView
     @BindView(R.id.tv_lesson_start) lateinit var tvLessonStart: TextView
     @BindView(R.id.tv_lesson_end) lateinit var tvLessonEnd: TextView
+
+    @BindView(R.id.tv_message) lateinit var tvMessage: TextView
+    @BindView(R.id.pb_lesson) lateinit var pbLesson: ProgressBar
 
     var timePicker: TimePickerDialog? = null
 
@@ -44,20 +53,38 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
         super.onDestroy()
     }
 
-    override fun showProgress() {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_add_edit, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        if (item?.itemId == R.id.menu_action_save) {
+            presenter?.saveClicked(lessonId, etLessonName.text.toString(),
+                    etLessonTeacher.text.toString(), dayNumber,
+                    tvLessonStart.text.toString(),
+                    tvLessonEnd.text.toString())
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun showProgress() {
+        pbLesson.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
-
+        pbLesson.visibility = View.GONE
     }
 
     override fun showError(message: String) {
-
+        tvMessage.text = message
+        tvMessage.visibility = View.VISIBLE
     }
 
     override fun hideError() {
-
+        tvMessage.visibility = View.GONE
     }
 
     override fun showLesson(lesson: LessonEntity) {
@@ -67,10 +94,12 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
         tvLessonDay.text = lesson.day.name.toLowerCase().capitalize()
         tvLessonStart.text = lesson.startTime
         tvLessonEnd.text = lesson.endTime
+
+        llLesson.visibility = View.VISIBLE
     }
 
     override fun hideLesson() {
-
+        llLesson.visibility = View.GONE
     }
 
     override fun showTimePickerDialog() {
@@ -113,14 +142,6 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
     @OnClick(R.id.tv_lesson_end)
     fun onTimeEndClick() {
         presenter?.pickTimeClick(false)
-    }
-
-    @OnClick(R.id.b_save)
-    fun onSaveClick() {
-        presenter?.saveClicked(lessonId, etLessonName.text.toString(),
-                etLessonTeacher.text.toString(), dayNumber,
-                tvLessonStart.text.toString(),
-                tvLessonEnd.text.toString())
     }
 
     private fun init() {
