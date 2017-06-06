@@ -1,5 +1,6 @@
 package com.sevenander.timetable.settings
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -45,5 +46,8 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
             })
 
     private fun positiveClick(checkedItems: BooleanArray): DialogInterface.OnClickListener =
-            DialogInterface.OnClickListener({ _, _ -> presenter.saveDays(checkedItems) })
+            DialogInterface.OnClickListener({ _, _ ->
+                presenter.saveDays(checkedItems)
+                setResult(Activity.RESULT_OK)
+            })
 }

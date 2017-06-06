@@ -1,7 +1,6 @@
 package com.sevenander.timetable.util
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.support.v4.app.Fragment
 import com.sevenander.timetable.addEditLesson.AddEditActivity
@@ -38,8 +37,9 @@ class Navigator {
             activity.startActivityForResult(intent, Const.REQUEST_ADD_EDIT)
         }
 
-        fun startSettingsActivity(context: Context) {
-            context.startActivity(Intent(context, SettingsActivity::class.java))
+        fun startSettingsActivity(activity: Activity) {
+            activity.startActivityForResult(
+                    Intent(activity, SettingsActivity::class.java), Const.REQUEST_SETTINGS)
         }
     }
 }

@@ -12,5 +12,6 @@ class Const private constructor() {
         val KEY_PREFS_DAYS = "selectedDays"
 
         val REQUEST_ADD_EDIT = 1000
+        val REQUEST_SETTINGS = 2000
     }
 }
