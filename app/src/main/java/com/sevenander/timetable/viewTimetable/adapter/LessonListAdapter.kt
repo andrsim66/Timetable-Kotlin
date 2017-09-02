@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.sevenander.timetable.R
 import com.sevenander.timetable.data.model.LessonEntity
+import kotlinx.android.synthetic.main.item_content.view.*
 import java.util.*
 
 /**
@@ -37,7 +38,7 @@ class LessonListAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.Vi
         val item = items[position]
 
         viewHolder.setLessonEntity(item)
-        viewHolder.tvItem.text = "${item.startTime} - ${item.endTime} | ${item.name} | ${item.teacher} | ${item.day.name}"
+        viewHolder.itemView.tvItemContent.text = "${item.startTime} - ${item.endTime} | ${item.name} | ${item.teacher} | ${item.day.name}"
     }
 
     fun setItemClickListener(itemClickListener: LessonItemClickListener) {

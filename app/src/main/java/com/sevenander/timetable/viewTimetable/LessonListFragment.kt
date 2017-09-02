@@ -5,30 +5,19 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.Unbinder
+import com.sevenander.timetable.R
 import com.sevenander.timetable.data.model.LessonDay
 import com.sevenander.timetable.data.model.LessonEntity
 import com.sevenander.timetable.util.Const
 import com.sevenander.timetable.util.Navigator
 import com.sevenander.timetable.viewTimetable.adapter.LessonItemClickListener
 import com.sevenander.timetable.viewTimetable.adapter.LessonListAdapter
-import com.sevenander.timetable.R
+import kotlinx.android.synthetic.main.fragment_lesson_list.*
 
 class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
-
-    @BindView(R.id.tv_lessons_message) lateinit var tvMessage: TextView
-    @BindView(R.id.pb_lessons) lateinit var pbLessons: ProgressBar
-    @BindView(R.id.rv_lessons) lateinit var rvLessons: RecyclerView
-
-    private lateinit var unbinder: Unbinder
 
     private var lessonDay: LessonDay? = null
 
@@ -46,7 +35,6 @@ class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_lesson_list, container, false)
-        unbinder = ButterKnife.bind(this@LessonListFragment, view)
 
         init()
         setupViews()
@@ -67,11 +55,6 @@ class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
 //        mListener = null
 //    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        unbinder.unbind()
-    }
-
     override fun showProgress() {
         pbLessons.visibility = View.VISIBLE
     }
@@ -81,12 +64,12 @@ class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
     }
 
     override fun showError(message: String) {
-        tvMessage.text = message
-        tvMessage.visibility = View.VISIBLE
+        tvLessonsMessage.text = message
+        tvLessonsMessage.visibility = View.VISIBLE
     }
 
     override fun hideError() {
-        tvMessage.visibility = View.GONE
+        tvLessonsMessage.visibility = View.GONE
     }
 
     override fun context(): Context {

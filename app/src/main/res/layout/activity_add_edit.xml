@@ -4,13 +4,13 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/ll_lesson"
+        android:id="@+id/llLesson"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/et_lesson_name"
+            android:id="@+id/etLessonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -18,7 +18,7 @@
             android:maxLines="1" />
 
         <EditText
-            android:id="@+id/et_lesson_teacher"
+            android:id="@+id/etLessonTeacher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -26,7 +26,7 @@
             android:maxLines="1" />
 
         <TextView
-            android:id="@+id/tv_lesson_day"
+            android:id="@+id/tvLessonDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -34,7 +34,7 @@
             android:maxLines="1" />
 
         <TextView
-            android:id="@+id/tv_lesson_start"
+            android:id="@+id/tvLessonStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -42,7 +42,7 @@
             android:maxLines="1" />
 
         <TextView
-            android:id="@+id/tv_lesson_end"
+            android:id="@+id/tvLessonEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_message"
+        android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,7 +59,7 @@
         android:visibility="gone" />
 
     <ProgressBar
-        android:id="@+id/pb_lesson"
+        android:id="@+id/pbLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

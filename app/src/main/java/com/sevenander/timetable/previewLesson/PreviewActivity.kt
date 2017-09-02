@@ -3,22 +3,16 @@ package com.sevenander.timetable.previewLesson
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
-import com.sevenander.timetable.data.model.LessonEntity
 import com.sevenander.timetable.R
+import com.sevenander.timetable.data.model.LessonEntity
 import com.sevenander.timetable.util.Const
+import kotlinx.android.synthetic.main.activity_preview.*
 
 class PreviewActivity : AppCompatActivity(), PreviewView {
-
-    @BindView(R.id.tv_lesson_name) lateinit var tvLessonName: TextView
-    @BindView(R.id.tv_lesson_day) lateinit var tvLessonDay: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preview)
-        ButterKnife.bind(this@PreviewActivity)
 
         init()
     }

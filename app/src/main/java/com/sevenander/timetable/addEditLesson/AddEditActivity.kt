@@ -8,29 +8,13 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
 import com.sevenander.timetable.R
 import com.sevenander.timetable.data.model.LessonEntity
 import com.sevenander.timetable.util.Const
+import kotlinx.android.synthetic.main.activity_add_edit.*
 import java.util.*
 
 class AddEditActivity : AppCompatActivity(), AddEditView {
-
-    @BindView(R.id.ll_lesson) lateinit var llLesson: LinearLayout
-    @BindView(R.id.et_lesson_name) lateinit var etLessonName: EditText
-    @BindView(R.id.et_lesson_teacher) lateinit var etLessonTeacher: EditText
-    @BindView(R.id.tv_lesson_day) lateinit var tvLessonDay: TextView
-    @BindView(R.id.tv_lesson_start) lateinit var tvLessonStart: TextView
-    @BindView(R.id.tv_lesson_end) lateinit var tvLessonEnd: TextView
-
-    @BindView(R.id.tv_message) lateinit var tvMessage: TextView
-    @BindView(R.id.pb_lesson) lateinit var pbLesson: ProgressBar
 
     private var timePicker: TimePickerDialog? = null
 
@@ -43,7 +27,6 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit)
-        ButterKnife.bind(this@AddEditActivity)
 
         init()
     }
@@ -134,22 +117,21 @@ class AddEditActivity : AppCompatActivity(), AddEditView {
         return this@AddEditActivity
     }
 
-    @OnClick(R.id.tv_lesson_start)
-    fun onTimeStartClick() {
-        presenter?.pickTimeClick(true)
-    }
-
-    @OnClick(R.id.tv_lesson_end)
-    fun onTimeEndClick() {
-        presenter?.pickTimeClick(false)
-    }
-
     private fun init() {
         getExtras()
 
         presenter = AddEditPresenter(this@AddEditActivity)
         if (editMode)
             presenter?.init(lessonId)
+
+
+        tvLessonStart.setOnClickListener({
+            presenter?.pickTimeClick(true)
+        })
+
+        tvLessonEnd.setOnClickListener({
+            presenter?.pickTimeClick(false)
+        })
     }
 
     private fun getExtras() {

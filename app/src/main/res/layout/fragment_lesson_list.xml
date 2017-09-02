@@ -5,20 +5,20 @@
     tools:context=".viewTimetable.LessonListFragment">
 
     <TextView
-        android:id="@+id/tv_lessons_message"
+        android:id="@+id/tvLessonsMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="16dp" />
 
     <ProgressBar
-        android:id="@+id/pb_lessons"
+        android:id="@+id/pbLessons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_lessons"
+        android:id="@+id/rvLessons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"

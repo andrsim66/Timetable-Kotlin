@@ -4,23 +4,16 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
 import com.sevenander.timetable.R
 import com.sevenander.timetable.util.Const
 import com.sevenander.timetable.util.Navigator
 import com.sevenander.timetable.viewTimetable.adapter.LessonPagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
-
-    @BindView(R.id.tl_headers) lateinit var tlHeaders: TabLayout
-    @BindView(R.id.vp_timetable) lateinit var vpTimetable: ViewPager
 
     private lateinit var adapter: LessonPagerAdapter
     private lateinit var presenter: MainPresenter
@@ -28,7 +21,6 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this@MainActivity)
 
         init()
     }
@@ -84,13 +76,13 @@ class MainActivity : AppCompatActivity(), MainView {
         tlHeaders.setupWithViewPager(vpTimetable)
     }
 
-    @OnClick(R.id.fab_add)
-    fun onAddClick() {
-        Navigator.startAddActivity(this@MainActivity, vpTimetable.currentItem)
-    }
-
     private fun init() {
         presenter = MainPresenter(this)
         presenter.init()
+
+        fabAdd.setOnClickListener({
+            Navigator.startAddActivity(this@MainActivity,
+                    vpTimetable.currentItem)
+        })
     }
 }
