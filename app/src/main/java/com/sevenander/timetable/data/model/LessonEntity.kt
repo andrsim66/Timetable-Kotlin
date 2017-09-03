@@ -11,6 +11,7 @@ data class LessonEntity(var name: String, var teacher: String, var day: LessonDa
     var id: Int = -1
     var startTime: String = "00:00"
     var endTime: String = "00:00"
+    var room: String = "Room 1A"
 
     fun getStratTime(): Date {
         return SimpleDateFormat("HH.mm", Locale.ENGLISH).parse(startTime)

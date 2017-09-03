@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".viewTimetable.MainActivity">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tlHeaders"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:tabGravity="center"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/colorAccent"
-        app:tabTextColor="@android:color/white" />
-
     <android.support.v4.view.ViewPager
         android:id="@+id/vpTimetable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tlHeaders" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tlHeaders"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/size_4"
+        app:tabGravity="center"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@android:color/white" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAdd"

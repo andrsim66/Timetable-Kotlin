@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGreyBackground"
     tools:context=".viewTimetable.LessonListFragment">
 
     <TextView
@@ -9,7 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="16dp" />
+        android:padding="@dimen/size_16"
+        android:textColor="@color/colorGreyText"
+        android:textSize="@dimen/size_text_16" />
 
     <ProgressBar
         android:id="@+id/pbLessons"
@@ -22,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:padding="16dp"
+        android:paddingBottom="@dimen/size_8"
+        android:paddingTop="@dimen/size_8"
         android:scrollbars="none" />
 </FrameLayout>

@@ -34,11 +34,14 @@ class LessonListFragment : Fragment(), LessonListView, LessonItemClickListener {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment_lesson_list, container, false)
+        return inflater!!.inflate(R.layout.fragment_lesson_list, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         init()
         setupViews()
-        return view
     }
 
 //    override fun onAttach(context: Context?) {

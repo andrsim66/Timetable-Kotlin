@@ -1,13 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlItemContent"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:padding="16dp">
+    android:background="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/tvItemContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/vItemColor"
+        android:paddingEnd="@dimen/size_16"
+        android:paddingStart="@dimen/size_8"
+        android:paddingTop="@dimen/size_16"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/size_text_16"
+        tools:text="Swimming" />
+
+    <TextView
+        android:id="@+id/tvItemTeacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvItemContent"
+        android:layout_toEndOf="@+id/vItemColor"
+        android:paddingEnd="@dimen/size_16"
+        android:paddingStart="@dimen/size_8"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/size_text_14"
+        tools:text="Mr. Miyagee" />
+
+    <TextView
+        android:id="@+id/tvItemRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvItemTeacher"
+        android:layout_toEndOf="@+id/vItemColor"
+        android:paddingBottom="@dimen/size_16"
+        android:paddingEnd="@dimen/size_16"
+        android:paddingStart="@dimen/size_8"
+        android:textSize="@dimen/size_text_14"
+        tools:text="Room 14A" />
+
+    <TextView
+        android:id="@+id/tvItemTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:paddingEnd="@dimen/size_16"
+        android:paddingTop="@dimen/size_16"
+        android:textSize="@dimen/size_text_12"
+        tools:text="10:00 - 11:00" />
+
+    <View
+        android:id="@+id/vItemColor"
+        android:layout_width="@dimen/size_8"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/vItemDivider"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorAccent" />
+
+    <View
+        android:id="@+id/vItemDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvItemRoom"
+        android:background="@color/colorGreyBackground" />
 </RelativeLayout>

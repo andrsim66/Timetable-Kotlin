@@ -38,7 +38,11 @@ class LessonListAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.Vi
         val item = items[position]
 
         viewHolder.setLessonEntity(item)
-        viewHolder.itemView.tvItemContent.text = "${item.startTime} - ${item.endTime} | ${item.name} | ${item.teacher} | ${item.day.name}"
+        viewHolder.itemView.tvItemContent.text = "${item.name} | ${item.day.name}"
+        viewHolder.itemView.tvItemTeacher.text = item.teacher
+        viewHolder.itemView.tvItemRoom.text = item.room
+        viewHolder.itemView.tvItemTime.text = "${item.startTime} - ${item.endTime}"
+        viewHolder.itemView.vItemColor.setBackgroundResource(R.color.colorAccent)
     }
 
     fun setItemClickListener(itemClickListener: LessonItemClickListener) {
