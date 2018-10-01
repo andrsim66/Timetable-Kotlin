@@ -13,9 +13,10 @@ buildscript {
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha12'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versionKotlin"
 
         // NOTE: Do not place your application dependencies here; they belong
