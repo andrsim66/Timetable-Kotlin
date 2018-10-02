@@ -5,13 +5,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.sevenander.timetable"
 
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 28
 
         versionCode 1
         versionName "1.0"
