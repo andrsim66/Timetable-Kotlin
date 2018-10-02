@@ -28,15 +28,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versionKotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versionKotlin"
 
-    compile "com.android.support:appcompat-v7:$versionSupport"
-    compile "com.android.support:support-v4:$versionSupport"
-    compile "com.android.support:design:$versionSupport"
-    compile "com.android.support:recyclerview-v7:$versionSupport"
-    compile "com.android.support.constraint:constraint-layout:$versionConstraint"
+    implementation "com.android.support:appcompat-v7:$versionSupport"
+    implementation "com.android.support:support-v4:$versionSupport"
+    implementation "com.android.support:design:$versionSupport"
+    implementation "com.android.support:recyclerview-v7:$versionSupport"
+    implementation "com.android.support.constraint:constraint-layout:$versionConstraint"
 
     androidTestCompile("com.android.support.test.espresso:espresso-core:$versionEspresso", {
         exclude module: 'support-annotations'
