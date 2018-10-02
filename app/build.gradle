@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -32,13 +32,13 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versionKotlin"
 
-    implementation "com.android.support:appcompat-v7:$versionSupport"
-    implementation "com.android.support:support-v4:$versionSupport"
-    implementation "com.android.support:design:$versionSupport"
-    implementation "com.android.support:recyclerview-v7:$versionSupport"
-    implementation "com.android.support.constraint:constraint-layout:$versionConstraint"
+    implementation "androidx.appcompat:appcompat:$versionSupport"
+    implementation "androidx.legacy:legacy-support-v4:$versionSupport"
+    implementation "com.google.android.material:material:$versionSupport"
+    implementation "androidx.recyclerview:recyclerview:$versionSupport"
+    implementation "androidx.constraintlayout:constraintlayout:$versionConstraint"
 
-    androidTestImplementation("com.android.support.test.espresso:espresso-core:$versionEspresso", {
+    androidTestImplementation("androidx.test.espresso:espresso-core:$versionEspresso", {
         exclude module: 'support-annotations'
     })
     testImplementation "junit:junit:$versionJUnit"

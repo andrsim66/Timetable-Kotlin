@@ -4,11 +4,11 @@ buildscript {
 
     ext.versionGradle = '3.0.0-beta4'
     ext.versionKotlin = '1.2.71'
-    ext.versionSupport = '28.0.1'
-    ext.versionConstraint = '1.1.3'
+    ext.versionSupport = '1.0.0-beta01'
+    ext.versionConstraint = '1.1.2'
 
     ext.versionJUnit = '4.12'
-    ext.versionEspresso = '2.2.2'
+    ext.versionEspresso = '3.1.0-alpha4'
 
     repositories {
         maven { url 'https://maven.google.com' }
