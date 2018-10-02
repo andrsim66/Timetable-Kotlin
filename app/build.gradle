@@ -38,8 +38,8 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$versionSupport"
     implementation "com.android.support.constraint:constraint-layout:$versionConstraint"
 
-    androidTestCompile("com.android.support.test.espresso:espresso-core:$versionEspresso", {
+    androidtestImplementation("com.android.support.test.espresso:espresso-core:$versionEspresso", {
         exclude module: 'support-annotations'
     })
-    testCompile "junit:junit:$versionJUnit"
+    testImplementation "junit:junit:$versionJUnit"
 }
