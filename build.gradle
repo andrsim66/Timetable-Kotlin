@@ -3,9 +3,9 @@
 buildscript {
 
     ext.versionGradle = '3.0.0-beta4'
-    ext.versionKotlin = '1.1.50'
+    ext.versionKotlin = '1.2.71'
     ext.versionSupport = '25.4.0'
-    ext.versionConstraint = '1.0.2'
+    ext.versionConstraint = '1.1.3'
 
     ext.versionJUnit = '4.12'
     ext.versionEspresso = '2.2.2'
